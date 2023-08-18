@@ -8,7 +8,13 @@ Currently working on building a weather application using python. I would also l
 If the requested city is in the json file and the file hasn't been updated for an hour, it will not send an API request to weatherstack. Instead it will use the existing data in the json file.</p>
 
 <h3>Plans:</h3>
+<h4>Available Info</h4>
 <li>Display current temperature</li>
 <li>Display current wind and direction</li>
 <li>Display current humidity</li>
 <li>Display current UV Index</li>
+<li>Display city and state</li>
+
+<h4>Expected Features</h4>
+<li>Allow easy input of desired weather location</li>
+<li>Allow for multiple locations to be available at once</li>
