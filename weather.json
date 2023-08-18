@@ -1,0 +1,41 @@
+{
+    "current": {
+        "cloudcover": 0,
+        "feelslike": 75,
+        "humidity": 41,
+        "is_day": "yes",
+        "observation_time": "06:12 PM",
+        "precip": 0,
+        "pressure": 1016,
+        "temperature": 72,
+        "uv_index": 6,
+        "visibility": 8,
+        "weather_code": 113,
+        "weather_descriptions": [
+            "Sunny"
+        ],
+        "weather_icons": [
+            "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+        ],
+        "wind_degree": 300,
+        "wind_dir": "WNW",
+        "wind_speed": 9
+    },
+    "location": {
+        "country": "United States of America",
+        "lat": "45.820",
+        "localtime": "2023-08-18 13:12",
+        "localtime_epoch": 1692364320,
+        "lon": "-88.066",
+        "name": "Iron Mountain",
+        "region": "Michigan",
+        "timezone_id": "America/Menominee",
+        "utc_offset": "-5.0"
+    },
+    "request": {
+        "language": "en",
+        "query": "Iron Mountain, United States of America",
+        "type": "City",
+        "unit": "f"
+    }
+}
