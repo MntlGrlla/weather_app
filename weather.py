@@ -1,5 +1,6 @@
 import requests
 import json
+from json.decoder import JSONDecodeError
 import os
 import time
 
@@ -19,36 +20,44 @@ current_time = time.time()
 API_CURRENT = 'http://api.weatherstack.com/current'
 parameters = {
     'access_key': '0281837a5be96907fa57ea6e651bb7b1',
-    'query': 'Big Rapids, Michigan',  # desired location for weather
+    'query': 'Fukushima',  # desired location for weather
     'units': 'f'  # units come back from api in Fahrenheit
 }
 
 # Checks file for data
 with open('weather.json', 'r') as w_json:
-    data = json.load(w_json)
-    city = parameters['query'].split(',')[0]
-    if city not in data['location']['name']:
+    try:
+        data = json.load(w_json)
+        city = parameters['query'].split(',')[0]
+        if city not in data['location']['name']:
+            in_file = False
+            print(in_file)
+        else:
+            in_file = True
+            print('Data is in cache folder, checking most recent update...')
+    except JSONDecodeError:
         in_file = False
-        print(in_file)
-    else:
-        in_file = True
-        print('Data is in cache folder, checking most recent update...')
-        m_time = os.path.getmtime('weather.json')
+        pass
 
-if not in_file or (current_time - m_time) >= 3600:
+# initializing mod_time with the timestamp from last modification of the file 'weather.json'
+mod_time = os.path.getmtime('weather.json')
+
+# Conditional block to check accuracy of data stored
+if not in_file or (current_time - mod_time) >= 3600:
     if not in_file:
         print('Data was not in cache, updating data...')
         get_and_dump(API_CURRENT, parameters)
-    if (current_time - m_time) >= 3600:
+    if current_time - mod_time >= 3600:
         print('Out of date data, updating data...')
         get_and_dump(API_CURRENT, parameters)
 
 
-if (current_time - m_time) <= 3600 and in_file:
+if (current_time - mod_time) <= 3600 and in_file:
     print('Using data in cache...')
 
 
 # Now that we have the data we want, we can pull information from our json file
+# Using a with block for easy use
 with open('weather.json', 'r') as w_json:
     data = json.load(w_json)
 
