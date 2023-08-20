@@ -18,3 +18,6 @@ If the requested city is in the json file and the file hasn't been updated for a
 <h4>Expected Features</h4>
 <li>Allow easy input of desired weather location</li>
 <li>Allow for multiple locations to be available at once</li>
+
+<h4>Planned Layout</h4>
+<img src='app_layout.png' />
