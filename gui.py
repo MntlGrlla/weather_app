@@ -17,8 +17,11 @@ frm_select = tk.Frame(master=window)
 frm_select.grid(row=0, column=0)
 
 ent_select = tk.Entry(master=frm_select, width=35)
-ent_select.pack()
+ent_select.grid(row=0, column=0)
 ent_select.insert(0, 'Select City (City, Region(State))')
+
+btn_search = tk.Button(width=10, height=10, image=tk.PhotoImage('search-icon-png-1.png'))
+btn_search.grid(row=0, column=1)
 
 frm_main = tk.Frame(master=window)
 frm_main.grid(row=1, column=0)
