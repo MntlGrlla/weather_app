@@ -22,4 +22,4 @@ If the requested city is in the json file and the file hasn't been updated for a
 <h4>Planned Layout</h4>
 <img src='app_layout.png' />
 <h4>Implemented Layout</h4>
-<img src='final_layou.png' />
+<img src='final_layout.PNG' />
